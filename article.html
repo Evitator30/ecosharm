@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Статья — Экошарм</title>
+  <meta name="description" content="">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Экошарм" class="logo__img">
+      <div class="logo__text">Эко<span>шарм</span></div>
+    </a>
+    <nav>
+      <ul class="nav" id="navLinks">
+        <li>
+          <a href="blog.html">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+            Статьи
+          </a>
+        </li>
+        <li>
+          <a href="blog.html">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 2c1 2 2 4.5 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+            Ингредиенты
+          </a>
+        </li>
+        <li>
+          <a href="blog.html">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg>
+            О косметике
+          </a>
+        </li>
+        <li>
+          <a href="index.html">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            О проекте
+          </a>
+        </li>
+        <li>
+          <a href="contact.html">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            Контакты
+          </a>
+        </li>
+        <li>
+          <button class="nav__search" id="searchBtn" aria-label="Поиск">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </button>
+        </li>
+        <li>
+          <a href="contact.html" class="nav__subscribe">Связаться</a>
+        </li>
+      </ul>
+    </nav>
+    <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- SEARCH OVERLAY -->
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <div class="search-input-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" class="search-input" id="searchInput" placeholder="Поиск по статьям...">
+      <button class="search-close" id="searchClose">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<main id="articlePage"></main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="logo__text" style="color:white;font-size:1.2rem;">Эко<span style="color:var(--olive-light);">шарм</span></div>
+        <p>Научно-крафтовый блог о натуральной косметике.</p>
+        <div class="footer__social">
+          <a href="https://vk.com/pautinkainfo" target="_blank" rel="noopener noreferrer" aria-label="VK Татьяны Соколовой">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.391 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.864-.525-2.05-1.727-1.033-1-1.49-1.135-1.744-1.135-.356 0-.458.102-.458.593v1.575c0 .424-.135.678-1.253.678-1.846 0-3.896-1.118-5.339-3.202C4.624 10.857 4.03 8.57 4.03 8.096c0-.254.102-.491.593-.491h1.744c.44 0 .61.203.78.677.864 2.49 2.303 4.675 2.896 4.675.22 0 .322-.102.322-.66V9.721c-.068-1.186-.695-1.287-.695-1.71 0-.203.17-.407.44-.407h2.744c.373 0 .508.203.508.643v3.473c0 .372.17.508.271.508.22 0 .407-.136.813-.542 1.253-1.406 2.151-3.574 2.151-3.574.119-.254.322-.491.763-.491h1.744c.525 0 .644.27.525.643-.22 1.017-2.354 4.031-2.354 4.031-.186.305-.254.44 0 .78.186.254.796.78 1.203 1.253.745.847 1.32 1.558 1.473 2.05.17.49-.085.744-.576.744z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4>Навигация</h4>
+        <ul>
+          <li><a href="blog.html">Статьи</a></li>
+          <li><a href="blog.html">Ингредиенты</a></li>
+          <li><a href="blog.html">О косметике</a></li>
+          <li><a href="index.html">О проекте</a></li>
+          <li><a href="contact.html">Контакты</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Категории</h4>
+        <ul>
+          <li><a href="blog.html">Дезодоранты</a></li>
+          <li><a href="blog.html">Уход за кожей</a></li>
+          <li><a href="blog.html">Научные разборы</a></li>
+          <li><a href="blog.html">Авторские заметки</a></li>
+          <li><a href="blog.html">Отзывы</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Подписка</h4>
+        <ul>
+          <li><a href="https://vk.com/pautinkainfo" target="_blank" rel="noopener noreferrer">ВКонтакте</a></li>
+          <li><a href="contact.html">Написать автору</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2025–2026 Экошарм</span>
+      <a href="#">Политика конфиденциальности</a>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Наверх">&uarr;</button>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

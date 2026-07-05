@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Экошарм — натуральная косметика, основанная на биологии</title>
+  <meta name="description" content="Научно-крафтовый блог о натуральной косметике. Биология, химия и честный разговор о том, что мы наносим на кожу.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Экошарм" class="logo__img">
+      <div class="logo__text">Эко<span>шарм</span></div>
+    </a>
+    <nav>
+      <ul class="nav" id="navLinks">
+        <li>
+          <a href="blog.html">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+            Статьи
+          </a>
+        </li>
+        <li>
+          <a href="blog.html">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 2c1 2 2 4.5 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+            Ингредиенты
+          </a>
+        </li>
+        <li>
+          <a href="blog.html">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg>
+            О косметике
+          </a>
+        </li>
+        <li>
+          <a href="index.html" class="active">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            О проекте
+          </a>
+        </li>
+        <li>
+          <a href="contact.html">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            Контакты
+          </a>
+        </li>
+        <li>
+          <button class="nav__search" id="searchBtn" aria-label="Поиск">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </button>
+        </li>
+        <li>
+          <a href="contact.html" class="nav__subscribe">Связаться</a>
+        </li>
+      </ul>
+    </nav>
+    <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- SEARCH OVERLAY -->
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <div class="search-input-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" class="search-input" id="searchInput" placeholder="Поиск по статьям...">
+      <button class="search-close" id="searchClose">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero__grid">
+      <div class="hero__content reveal">
+        <div class="hero__badge">Научно-крафтовый проект</div>
+        <h1>Косметика, которую можно <em>объяснить</em></h1>
+        <p class="hero__sub">Знаете, из чего состоит ваш крем? Оказывается, промышленная косметика — продукт нефтехимии. Альтернатива существует, и она работает.</p>
+        <div class="hero__actions">
+          <a href="blog.html" class="btn btn--primary">Читать статьи</a>
+          <a href="blog.html" class="btn btn--outline">Об ингредиентах</a>
+        </div>
+      </div>
+      <div class="hero__visual reveal">
+        <div class="hero__visual-bg"></div>
+        <img src="Фото к статьям/product_hero.png" alt="Натуральная косметика Экошарм" class="hero__product-img" loading="lazy">
+        <div class="hero__stamp">
+          <svg viewBox="0 0 120 120">
+            <defs>
+              <path id="circlePath" d="M60 60 m-45 0 a45 45 0 1 1 90 0 a45 45 0 1 1 -90 0"/>
+            </defs>
+            <circle cx="60" cy="60" r="54" fill="none" stroke="rgba(90,114,71,0.3)" stroke-width="1.5"/>
+            <circle cx="60" cy="60" r="48" fill="none" stroke="rgba(90,114,71,0.15)" stroke-width="0.5"/>
+            <text fill="rgba(90,114,71,0.6)" font-size="8" font-family="Source Sans 3, sans-serif" font-weight="600" letter-spacing="3">
+              <textPath href="#circlePath">НАУКА · ПРИРОДА · ЭФФЕКТИВНОСТЬ</textPath>
+            </text>
+            <text x="60" y="56" text-anchor="middle" fill="rgba(90,114,71,0.7)" font-family="Playfair Display, serif" font-size="14" font-weight="700">100%</text>
+            <text x="60" y="70" text-anchor="middle" fill="rgba(90,114,71,0.5)" font-size="7" font-family="Source Sans 3, sans-serif">натуральный</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LATEST ARTICLES — compact high-priority preview -->
+<section class="latest-strip" id="latestArticles" aria-labelledby="latestTitle">
+  <div class="container">
+    <div class="latest-strip__head">
+      <div>
+        <span class="section-label">Новое в блоге</span>
+        <h2 id="latestTitle">Свежие статьи</h2>
+      </div>
+      <a href="blog.html" class="latest-strip__all">Смотреть все <span>&rarr;</span></a>
+    </div>
+    <div class="latest-strip__viewport">
+      <div class="latest-strip__track" id="blogPreview"></div>
+    </div>
+    <div class="latest-strip__mobile-hint">Листайте карточки в сторону</div>
+  </div>
+</section>
+
+<!-- HOOK — shocking fact -->
+<section class="hook section--white">
+  <div class="container">
+    <div class="hook__inner reveal" id="insightCarousel" tabindex="0" aria-roledescription="карусель" aria-label="Цитаты из статей Татьяны Соколовой">
+      <button class="hook__nav hook__nav--prev" id="insightPrev" type="button" aria-label="Предыдущая цитата">&larr;</button>
+      <button class="hook__nav hook__nav--next" id="insightNext" type="button" aria-label="Следующая цитата">&rarr;</button>
+      <div class="hook__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+      </div>
+      <div class="hook__slide" id="insightSlide">
+        <blockquote class="hook__text" id="insightText">Вся промышленная косметика просто-напросто целиком из нефти состоит. Не добавки из нефти — а сама нефть, прошедшая через нефтехимическую промышленность.</blockquote>
+        <div class="hook__source">— Татьяна Соколова, <a id="insightSource" href="article.html?id=cream-and-oil">«Как связаны крем и нефть?»</a></div>
+      </div>
+      <div class="hook__footer">
+        <div class="hook__dots" id="insightDots" aria-label="Выбор цитаты"></div>
+        <span class="hook__hint">Колесо мыши или стрелки</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+  <div class="container">
+    <div class="features__grid">
+      <a href="blog.html" class="feature reveal">
+        <div class="feature__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+        </div>
+        <h3>Наука, а не маркетинг</h3>
+        <p>Составы и ингредиенты разбираются с точки зрения дерматологии и доказательной медицины.</p>
+      </a>
+      <a href="blog.html" class="feature reveal">
+        <div class="feature__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>
+        </div>
+        <h3>Без мифов и страха</h3>
+        <p>Честно — о пользе и рисках, без «химия = яд» и других упрощений.</p>
+      </a>
+      <a href="blog.html" class="feature reveal">
+        <div class="feature__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg>
+        </div>
+        <h3>Ручной подход</h3>
+        <p>Рецепты отбираются и тестируются — только то, что действительно работает.</p>
+      </a>
+      <a href="blog.html" class="feature reveal">
+        <div class="feature__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3>Честно и прозрачно</h3>
+        <p>Источники, исследования и открытые выводы — можно проверить каждое утверждение.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMS — what you might be putting on your skin -->
+<section class="problems section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">А вы знали?</span>
+      <h2>Что оказывается в обычных кремах</h2>
+    </div>
+    <div class="problems__grid">
+      <div class="problem-card reveal">
+        <div class="problem-card__num">01</div>
+        <h3>Парабены</h3>
+        <p>Консерванты в 85% промышленной косметики. По мнению ряда исследователей, могут нарушать гормональный фон.</p>
+        <a href="article.html?id=cream-and-oil" class="problem-card__link">Читать разбор &rarr;</a>
+      </div>
+      <div class="problem-card reveal">
+        <div class="problem-card__num">02</div>
+        <h3>Алюминий</h3>
+        <p>Соли алюминия в дезодорантах закупоривают поры. Исследования связывают их с рисками для здоровья молочных желёз.</p>
+        <a href="article.html?id=three-oncologists" class="problem-card__link">Читать разбор &rarr;</a>
+      </div>
+      <div class="problem-card reveal">
+        <div class="problem-card__num">03</div>
+        <h3>Нефтепродукты</h3>
+        <p>Парафин, вазелин, минеральное масло — это переработанная нефть. Кожа их не распознаёт и не может вывести.</p>
+        <a href="article.html?id=what-to-replace-first" class="problem-card__link">Читать разбор &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about section--white">
+  <div class="container">
+    <div class="about__grid">
+      <div class="about__text reveal">
+        <div class="about__label">О проекте</div>
+        <h2>Зачем всё это нужно</h2>
+        <p>Кожа заслуживает осознанного ухода, а не случайных экспериментов. Здесь биология встречается с личным опытом, а сложные составы становятся понятнее.</p>
+        <p>Цель проекта — помочь присмотреться к привычной косметике и найти свой вариант ухода. Без витрины и давления: через наблюдения, статьи и разговор.</p>
+        <a href="blog.html" class="btn btn--ghost">Читать статьи &rarr;</a>
+      </div>
+      <div class="reveal">
+        <div class="stats">
+          <div class="stat">
+            <div class="stat__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+            </div>
+            <div class="stat__num">20+</div>
+            <div class="stat__label">авторских материалов<br>в блоге</div>
+          </div>
+          <div class="stat">
+            <div class="stat__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>
+            </div>
+            <div class="stat__num">К.б.н.</div>
+            <div class="stat__label">биологическое<br>образование</div>
+          </div>
+          <div class="stat">
+            <div class="stat__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
+            </div>
+            <div class="stat__num">Доцент</div>
+            <div class="stat__label">опыт работы<br>в высшей школе</div>
+          </div>
+          <div class="stat">
+            <div class="stat__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="stat__num">1:1</div>
+            <div class="stat__label">живой диалог<br>с автором</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTHOR -->
+<section class="author-section">
+  <div class="container">
+    <div class="author-card reveal">
+      <div class="author-card__portrait" aria-hidden="true">
+        <span>ТС</span>
+        <small>биолог</small>
+      </div>
+      <div class="author-card__content">
+        <span class="section-label">Автор проекта</span>
+        <h2>Татьяна Соколова</h2>
+        <p class="author-card__lead">Кандидат биологических наук, доцент. Преподавала в высшей школе и заведовала кафедрой в университете.</p>
+        <p>Экошарм вырос из внимательного отношения к составам, собственной чувствительной коже и желания делать косметику, принцип которой можно объяснить человеческим языком.</p>
+        <div class="author-card__actions">
+          <a href="https://vk.com/pautinkainfo" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Познакомиться в VK</a>
+          <a href="contact.html" class="author-card__link">Подробнее об авторе <span>&rarr;</span></a>
+        </div>
+      </div>
+      <div class="author-card__note">«Мне интересен не идеальный покупатель, а живой человек с вопросами, сомнениями и своей кожей».</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testimonial reveal" aria-live="polite">
+  <div class="container">
+    <div class="testimonial__eyebrow">Говорят читатели и клиенты</div>
+    <blockquote id="rotatingQuote">«Целый день в жару клеил обои в душном помещении. Тем не менее, дезодорант работал 16 часов! Вплоть до вечернего душа.»</blockquote>
+    <cite id="rotatingQuoteAuthor">— Дмитрий, о дезодоранте «Грейпфрут-Шалфей»</cite>
+    <div class="testimonial__dots" id="quoteDots" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="soft-cta">
+  <div class="container" style="text-align:center;">
+    <div class="soft-cta__panel reveal">
+      <span class="section-label">Продолжить разговор</span>
+      <h2>Иногда одного текста недостаточно</h2>
+      <p>В VK можно читать новые заметки, смотреть обсуждения и задать Татьяне вопрос — даже если вы пока просто присматриваетесь.</p>
+      <div style="display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap;">
+        <a href="https://vk.com/pautinkainfo" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Заглянуть в VK</a>
+        <a href="blog.html" class="btn btn--outline">Все статьи</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="logo__text" style="color:white;font-size:1.2rem;">Эко<span style="color:var(--olive-light);">шарм</span></div>
+        <p>Научно-крафтовый блог о натуральной косметике. Биология, химия и честный разговор о том, что наносится на кожу.</p>
+        <div class="footer__social">
+          <a href="https://vk.com/pautinkainfo" target="_blank" rel="noopener noreferrer" aria-label="VK Татьяны Соколовой">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.391 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.864-.525-2.05-1.727-1.033-1-1.49-1.135-1.744-1.135-.356 0-.458.102-.458.593v1.575c0 .424-.135.678-1.253.678-1.846 0-3.896-1.118-5.339-3.202C4.624 10.857 4.03 8.57 4.03 8.096c0-.254.102-.491.593-.491h1.744c.44 0 .61.203.78.677.864 2.49 2.303 4.675 2.896 4.675.22 0 .322-.102.322-.66V9.721c-.068-1.186-.695-1.287-.695-1.71 0-.203.17-.407.44-.407h2.744c.373 0 .508.203.508.643v3.473c0 .372.17.508.271.508.22 0 .407-.136.813-.542 1.253-1.406 2.151-3.574 2.151-3.574.119-.254.322-.491.763-.491h1.744c.525 0 .644.27.525.643-.22 1.017-2.354 4.031-2.354 4.031-.186.305-.254.44 0 .78.186.254.796.78 1.203 1.253.745.847 1.32 1.558 1.473 2.05.17.49-.085.744-.576.744z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4>Навигация</h4>
+        <ul>
+          <li><a href="blog.html">Статьи</a></li>
+          <li><a href="blog.html">Ингредиенты</a></li>
+          <li><a href="blog.html">О косметике</a></li>
+          <li><a href="index.html">О проекте</a></li>
+          <li><a href="contact.html">Контакты</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Категории</h4>
+        <ul>
+          <li><a href="blog.html">Дезодоранты</a></li>
+          <li><a href="blog.html">Уход за кожей</a></li>
+          <li><a href="blog.html">Научные разборы</a></li>
+          <li><a href="blog.html">Авторские заметки</a></li>
+          <li><a href="blog.html">Отзывы</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Подписка</h4>
+        <ul>
+          <li><a href="https://vk.com/pautinkainfo" target="_blank" rel="noopener noreferrer">ВКонтакте</a></li>
+          <li><a href="contact.html">Написать автору</a></li>
+        </ul>
+        <div class="footer__products">
+          <h4>Продукция</h4>
+          <div class="footer__product-list">
+            <a href="article.html?id=cream-vs-stick" class="footer__product-tag">Дезодорант-крем</a>
+            <a href="article.html?id=solid-feet" class="footer__product-tag">Крем для стоп</a>
+            <a href="article.html?id=chip-part1" class="footer__product-tag">Гель «Чип»</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2025–2026 Экошарм</span>
+      <a href="#">Политика конфиденциальности</a>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING CONTACT -->
+<div class="float-contact">
+  <span class="float-tooltip">Спросить Татьяну в VK</span>
+  <a href="https://vk.com/pautinkainfo" target="_blank" rel="noopener noreferrer" class="float-btn" aria-label="Написать Татьяне в VK">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+  </a>
+</div>
+
+<!-- BACK TO TOP -->
+<button class="to-top" id="toTop" aria-label="Наверх">&uarr;</button>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+  // Compact latest-articles strip
+  const preview = document.getElementById('blogPreview');
+  if (preview && window.ARTICLES) {
+    preview.innerHTML = window.ARTICLES.filter(a => a.type === 'article').slice(0, 4).map((a, index) => `
+      <a href="article.html?id=${a.id}" class="latest-card">
+        <div class="latest-card__image">
+          ${a.image ? `<img src="${a.image}" alt="" loading="lazy">` : '<span>Э</span>'}
+          ${index === 0 ? '<span class="latest-card__badge">Самое новое</span>' : ''}
+        </div>
+        <div class="latest-card__body">
+          <div class="latest-card__meta"><span>${a.category}</span><time>${a.date}</time></div>
+          <h3>${a.title}</h3>
+          <span class="latest-card__read">Читать <b>&rarr;</b></span>
+        </div>
+      </a>`).join('');
+  }
+</script>
+</body>
+</html>
