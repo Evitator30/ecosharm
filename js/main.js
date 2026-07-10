@@ -121,6 +121,21 @@ document.addEventListener('DOMContentLoaded', () => {
         ? `<div class="cover"><img src="${a.image}" alt="${a.title}"></div>`
         : '';
 
+      const hasSourceByline = a.content.includes('article-byline');
+      const hasSourceTags = a.content.includes('article-source-tags');
+      const authorBlock = hasSourceByline ? '' : `
+        <div class="signature signature--author">
+          <div class="signature__avatar">Т</div>
+          <div>
+            <div class="signature__name">Татьяна Соколова</div>
+            <div class="signature__role">Кандидат биологических наук, доцент</div>
+          </div>
+        </div>`;
+      const tagsBlock = hasSourceTags ? '' : `
+        <div class="article-meta-tags">
+          ${a.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+        </div>`;
+
       const related = window.ARTICLES.filter(x =>
         x.id !== a.id && x.category === a.category && x.type === 'article'
       ).slice(0, 2);
@@ -151,16 +166,8 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="article-layout">
             <div class="content">
               ${a.content}
-              <div class="signature signature--author">
-                <div class="signature__avatar">Т</div>
-                <div>
-                  <div class="signature__name">Татьяна Соколова</div>
-                  <div class="signature__role">Кандидат биологических наук, доцент</div>
-                </div>
-              </div>
-              <div style="display:flex;flex-wrap:wrap;gap:0.3rem;margin-top:1.2rem;">
-                ${a.tags.map(t => `<span class="tag">${t}</span>`).join('')}
-              </div>
+              ${authorBlock}
+              ${tagsBlock}
               <div class="article-conversation">
                 <span class="article-conversation__eyebrow">Продолжить разговор</span>
                 <h3>А что думаете вы?</h3>
