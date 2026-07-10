@@ -104,7 +104,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const filterBar = document.getElementById('filterBar');
   const articlesGrid = document.getElementById('articlesGrid');
   if (filterBar && articlesGrid && window.ARTICLES) {
-    articlesGrid.innerHTML = window.ARTICLES.map(a => createArticleCard(a)).join('');
+    articlesGrid.innerHTML = window.ARTICLES
+      .filter(a => a.type !== 'review')
+      .map(a => createArticleCard(a)).join('');
+  }
+
+  // ===== REVIEWS PAGE =====
+  const reviewsGrid = document.getElementById('reviewsGrid');
+  if (reviewsGrid && window.ARTICLES) {
+    const reviews = window.ARTICLES.filter(a => a.type === 'review');
+    reviewsGrid.innerHTML = reviews.map(review => `
+      <a href="article.html?id=${review.id}" class="review-card">
+        <div class="review-card__media">
+          ${review.image
+            ? `<img src="${review.image}" alt="${review.title}" loading="lazy">`
+            : '<span aria-hidden="true">“</span>'}
+        </div>
+        <div class="review-card__body">
+          <div class="review-card__meta"><span>Отзыв</span><time>${review.date}</time></div>
+          <h2>${review.title}</h2>
+          <p>${review.excerpt}</p>
+          <span class="review-card__read">Читать полностью <b>&rarr;</b></span>
+        </div>
+      </a>`).join('');
   }
 
   // ===== ARTICLE PAGE =====
@@ -137,8 +159,11 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>`;
 
       const related = window.ARTICLES.filter(x =>
-        x.id !== a.id && x.category === a.category && x.type === 'article'
+        x.id !== a.id && x.category === a.category && x.type === a.type
       ).slice(0, 2);
+      const backLink = a.type === 'review'
+        ? '<a href="reviews.html" class="back-link">&larr; Все отзывы</a>'
+        : '<a href="blog.html" class="back-link">&larr; Все статьи</a>';
       const relHtml = related.length ? `
         <div class="related">
           <h3>Читайте также</h3>
@@ -153,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
       page.innerHTML = `
         <div class="article-hero">
           <div class="container container--narrow">
-            <a href="blog.html" class="back-link">&larr; Все статьи</a>
+            ${backLink}
             <div class="article-hero__meta">
               <span class="article-hero__cat">${a.category}</span>
               <span>${a.date}</span>
